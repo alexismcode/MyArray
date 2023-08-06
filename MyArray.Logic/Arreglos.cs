@@ -33,6 +33,73 @@ namespace MyArray.Logic
             _top = N;
         }
 
+        public Arreglos NotRepetidos()
+        {
+            int countNotRepeat = 0;
+            for (int i = 0; i < _top; i++)
+            {
+                bool IsRepeat = false;
+                for (int j = 0; j < _top; j++)
+                {
+                    if (i != j)
+                    {
+                        if (_array[i] == _array[j])
+                        {
+                            IsRepeat = true;
+                            break;
+                        }
+                    }
+                }
+                if (!IsRepeat)
+                {
+                    countNotRepeat++;
+                }
+            }
+
+            var nonRepeat = new Arreglos(countNotRepeat);
+            for (int i = 0; i < _top; i++)
+            {
+                bool IsRepeat = false;
+                for (int j = 0; j < _top; j++)
+                {
+                    if (i != j)
+                    {
+                        if (_array[i] == _array[j])
+                        {
+                            IsRepeat = true;
+                            break;
+                        }
+                    }
+                }
+                if (!IsRepeat)
+                {
+                    nonRepeat.Add(_array[i]);
+                }
+            }
+            return nonRepeat;
+
+        }
+        public Arreglos Primos()
+        {
+            int countPrimo = 0;
+            for (int i = 0; i < _top; i++)
+            {
+                if (IsPrimo(_array[i]))
+                {
+                    countPrimo++;
+                }
+            }
+            var getPrimo = new Arreglos(countPrimo);
+            for (int i = 0; i < _top; i++)
+            {
+                if (IsPrimo(_array[i]))
+                {
+                    getPrimo.Add(_array[i]);
+                }
+            }
+            return getPrimo;
+        }
+
         public Arreglos Pares()
         {
             int countPar = 0;
@@ -135,6 +202,18 @@ namespace MyArray.Logic
             var aux = a;
             a = b;
             b = aux;
+        }
+        private bool IsPrimo(int n)
+        {
+            if (n == 1) return false;
+            for (int i = 2; i <= Math.Sqrt(n); i++)
+            {
+                if (n % i == 0)
+                {
+                    return false;
+                }
+            }
+            return true;
         }
     }
 }

@@ -3,8 +3,16 @@ Console.WriteLine("================================== Array ====================
 try
 {
     var array = new Arreglos(10);
-    array.Fill(10, 100);
+    array.Fill(1, 10);
+    array.Sort();
     Console.WriteLine(array);
+    Console.WriteLine("============================== No Repetidos ===============================");
+    var nonRepeat = array.NotRepetidos();
+    nonRepeat.Sort();
+    Console.WriteLine(nonRepeat);
+    Console.WriteLine("================================= Primos ==================================");
+    var getPrimo = array.Primos();
+    Console.WriteLine(getPrimo);
     Console.WriteLine("================================== Pares ==================================");
     var getPares = array.Pares();
     Console.WriteLine(getPares);
