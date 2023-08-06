@@ -2,15 +2,20 @@
 Console.WriteLine("================================== Array ==================================");
 try
 {
-    var array = new Arreglos(5);
-    array.Add(8);
-    array.Add(45);
-    array.Add(39);
+    var array = new Arreglos(10);
+    array.Fill(10, 100);
     Console.WriteLine(array);
+    Console.WriteLine("================================== Pares ==================================");
+    var getPares = array.Pares();
+    Console.WriteLine(getPares);
+    //array.Add(8);
+    //array.Add(45);
+    //array.Add(39);
+    //Console.WriteLine(array);
 
-    array.Insert(-25, 45);
-    array.Insert(123, 16);
-    Console.WriteLine(array);
+    //array.Insert(-25, 45);
+    //array.Insert(123, 16);
+    //Console.WriteLine(array);
 }
 catch (Exception ex)
 {

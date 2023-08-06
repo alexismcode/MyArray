@@ -33,6 +33,27 @@ namespace MyArray.Logic
             _top = N;
         }
 
+        public Arreglos Pares()
+        {
+            int countPares = 0;
+            for (int i = 0; i < _top; i++)
+            {
+                if (_array[i] % 2 == 0)
+                {
+                    countPares++;
+                }
+            }
+            var getPares = new Arreglos(countPares);
+            for (int i = 0; i < _top; i++)
+            {
+                if (_array[i] % 2 == 0)
+                {
+                    getPares.Add(_array[i]);
+                }
+            }
+            return getPares;
+        }
+        
         // Sort descendente
         public void Sort()
         {
