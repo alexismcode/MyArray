@@ -35,15 +35,15 @@ namespace MyArray.Logic
 
         public Arreglos Pares()
         {
-            int countPares = 0;
+            int countPar = 0;
             for (int i = 0; i < _top; i++)
             {
                 if (_array[i] % 2 == 0)
                 {
-                    countPares++;
+                    countPar++;
                 }
             }
-            var getPares = new Arreglos(countPares);
+            var getPares = new Arreglos(countPar);
             for (int i = 0; i < _top; i++)
             {
                 if (_array[i] % 2 == 0)
